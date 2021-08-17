@@ -4,6 +4,9 @@
 <ul class="list-group w-50">
 <% @tasks.each do |task| %>
 <li>
+<% if task.completed == true %>
+<i class="fab fa-twitter fa-2x"></i>
+<% end %>
 <%=link_to task.title, task_path(task.id), class: 'list-group-item'%>
 </li>
 <% end %>
