@@ -1,9 +1,11 @@
-<h1>Wow good job, this is the index page</h1>
-<%= link_to 'Add new task', new_task_path %>
-<ul>
+<div class='container'>
+<h1 class='h1'>Todo's</h1>
+<%= link_to 'Add new task', new_task_path, class: 'btn btn-primary p-3 mb-3' %>
+<ul class="list-group w-50">
 <% @tasks.each do |task| %>
 <li>
-<%=link_to task.title, task_path(task.id) %>
+<%=link_to task.title, task_path(task.id), class: 'list-group-item'%>
 </li>
 <% end %>
 </ul>
+</div>

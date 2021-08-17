@@ -1,11 +1,13 @@
-<div>
-<h1><%= @task.title %></h1>
-<h2><%= @task.details %></h2>
+<div class='container mt-5 d-flex justify-content-center align-items'>
+<div class="text-center">
+<h1 class='card-title'><%= @task.title %></h1>
+<h2 class='card-text'><%= @task.details %></h2>
 <p><%= @task.completed %></p>
-<%= link_to "Delete #{@task.title}",
+<%= link_to "Delete",
             task_path(@task),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<%= link_to "Edit item", edit_task_path(@task) %>
-<%= link_to "Go back to list", tasks_path %>
+            data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger mt-3 '  %>
+<%= link_to "Edit", edit_task_path(@task), class: 'btn btn-outline-success mt-3'  %>
+<%= link_to "Go back", tasks_path, class: 'btn btn-outline-primary mt-3'  %>
+</div>
 </div>
